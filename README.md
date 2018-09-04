@@ -1,5 +1,5 @@
 <h1 align="center">
-  <img  src="https://raw.githubusercontent.com/MrBurrBurr/Kwikly/blob/master/Kwikly/images/icon.ico" height="64" width="64" />
+  <img  src="https://raw.githubusercontent.com/MrBurrBurr/Kwikly/blob/master/Kwikly/Images/icon.ico" height="64" width="64" />
   <br/>
   Kwikly
 </h1>
