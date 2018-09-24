@@ -22,3 +22,6 @@ $RECYCLE.BIN/
 
 # Mac files
 .DS_Store
+
+Kwikly/bin
+Kwikly/obj
