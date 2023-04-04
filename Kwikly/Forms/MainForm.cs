@@ -218,37 +218,35 @@ namespace Kwikly {
         private void DataGrid_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e) {
             switch (e.Button) {
                 case MouseButtons.Middle:
-
-                try {
-                    if (e.ColumnIndex == DataGrid.Columns.IndexOf(DataGrid.Columns["Rank"])) {
-                        DataGrid.Rows[e.RowIndex].Cells["Rank"].Selected = true;
-
-                        DataGrid.CurrentCell.Value = VisualHelper.RankToBitmap(0);
-                        break;
+                    try {
+                        if (e.ColumnIndex == DataGrid.Columns.IndexOf(DataGrid.Columns["Rank"])) {
+                            DataGrid.Rows[e.RowIndex].Cells["Rank"].Selected = true;
+                            var oldRank = VisualHelper.BitmapToRank((DataGrid.CurrentCell.Value as Bitmap).GetHashCode());
+                            var newRank = VisualHelper.RankToGreyRank(oldRank);
+                            DataGrid.CurrentCell.Value = VisualHelper.RankToBitmap(newRank);
+                            break;
+                        }
                     }
-                }
-                catch (Exception ex) {
-                    MessageBox.Show("Error changing value while single clicking: " + ex.Message);
-                }
-                break;
+                    catch (Exception ex) {
+                        MessageBox.Show("Error changing value while single clicking: " + ex.Message);
+                    }
+                    break;
 
                 case MouseButtons.Right:
+                    try {
+                        if (e.RowIndex == -1) {
+                            DataGrid.ContextMenuStrip = GetColumnContext(DataGrid);
+                        }
+                        else {
+                            DataGrid.ContextMenuStrip = GetRightClickContext(DataGrid);
+                        }
 
-                try {
-                    if (e.RowIndex == -1) {
-                        DataGrid.ContextMenuStrip = GetColumnContext(DataGrid);
+                        DataGrid.ContextMenuStrip.Show(new Point(MousePosition.X, MousePosition.Y));
                     }
-                    else {
-                        DataGrid.ContextMenuStrip = GetRightClickContext(DataGrid);
+                    catch (Exception ex) {
+                        MessageBox.Show("Error showing context menu: " + ex.Message);
                     }
-
-                    DataGrid.ContextMenuStrip.Show(new Point(MousePosition.X, MousePosition.Y));
-                }
-                catch (Exception ex) {
-                    MessageBox.Show("Error showing context menu: " + ex.Message);
-                }
-                break;
-
+                    break;
             }
         }
 
