@@ -8,8 +8,9 @@ namespace Kwikly {
             dg.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dg.Columns["Login"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
 
-            //todo
-            //dg.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.None; // this turns off auto-resize.
+            // todo:
+            // dg.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.None;
+            // this turns off auto-resize.
             // Now we just need to set sensible sizes from the start.
 
             dg.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.DisplayedCells;

@@ -9,7 +9,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Kwikly</RootNamespace>
     <AssemblyName>Kwikly</AssemblyName>
-    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <IsWebBootstrapper>false</IsWebBootstrapper>
@@ -115,6 +115,7 @@
     <Content Include="Images\Ranks\GN2.png" />
     <Content Include="Images\Ranks\S2.png" />
     <Content Include="Images\Ranks\SEM.png" />
+    <None Include="app.config" />
     <None Include="Images\Context\Update.png" />
     <None Include="Images\Context\Account.png" />
     <None Include="Images\Context\Up.png" />
