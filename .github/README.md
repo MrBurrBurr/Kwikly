@@ -12,7 +12,7 @@
 </h3>
 
 ## Detailed setup instructions
-- Download & Install [.NET Framework 4.6.1](http://go.microsoft.com/fwlink/?LinkId=671744) from the Microsoft website if you're using Windows 7. Windows 8 and above should do this automatically for you.
+- Download & Install .NET Framework 4.8 from the Microsoft website if you're using Windows 7. Windows 8 and above should do this automatically for you.
 - Visit [the releases page](https://github.com/MrBurrBurr/Kwikly/releases) and download the latest .exe.
 - Run `Kwikly.exe` and wait for the config file to be created.
 - Enjoy switching between your steam accounts with only one double-click.
