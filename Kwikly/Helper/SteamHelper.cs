@@ -120,7 +120,7 @@ namespace Kwikly {
                 if (element != null) {
                     var cs2InnerText = await cs2winsElement.GetPropertyAsync("innerText");
                     var cs2wins = await cs2InnerText.JsonValueAsync();
-                    returnValue = $"{10 - int.Parse(cs2wins.ToString())}x more";
+                    returnValue = $"{cs2wins}x wins";
                 }
             }
 

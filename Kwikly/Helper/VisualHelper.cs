@@ -60,6 +60,11 @@ namespace Kwikly {
                 return;
             }
 
+            if (rank.EndsWith("x wins")) {
+                currentCell.Style.BackColor = common;
+                return;
+            }
+
             rank = rank.Replace(",", "");
             int rankInt;
             if (int.TryParse(rank, out rankInt))
