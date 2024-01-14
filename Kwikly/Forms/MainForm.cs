@@ -374,12 +374,8 @@ namespace Kwikly {
 
         private void CheckForUpdatesToolStripMenuItem_Click(object sender, EventArgs e) {
             try {
-                if (newVersion == null || currentVersion == null) {
-                    CheckForUpdates();
-                }
-                else {
-                    CompareVersions();
-                }
+                if (newVersion == null || currentVersion == null)  CheckForUpdates();
+                else CompareVersions();
             }
             catch (Exception ex) {
                 MessageBox.Show("Error checking for updates: " + ex.Message);
