@@ -14,6 +14,9 @@ namespace Kwikly {
         private static long  _steamID64base = 76561197960265728;
         private static string _configFile = _steamPath + @"/config/config.vdf";
         private static string _steamURL = "http://steamcommunity.com/profiles/";
+        private static string _csstatsURL = "https://csstats.gg/player/";
+        private static string _csstatsRank = ".rank > .cs2rating";
+        private static string _csstatsWins = "#cs2-rank > .wins";
 
         private static void Start() {
             Process.Start(Registry.CurrentUser.OpenSubKey(@"Software\\Valve\\Steam").GetValue("SteamExe").ToString());
@@ -26,9 +29,7 @@ namespace Kwikly {
                 ps.WindowStyle = ProcessWindowStyle.Hidden;
 
                 using (Process p = Process.Start(ps)) {
-                    if (GetProcess() == null)
-                        return;
-
+                    if (GetProcess() == null) return;
                     GetProcess().WaitForExit();
                 }
             }
@@ -81,8 +82,7 @@ namespace Kwikly {
 
         private static bool IsDigitsOnly(string str) {
             foreach (char c in str) {
-                if (c < '0' || c > '9')
-                    return false;
+                if (c < '0' || c > '9')  return false;
             }
 
             return true;
@@ -101,14 +101,14 @@ namespace Kwikly {
             var browserFetcher = new BrowserFetcher();
             await browserFetcher.DownloadAsync();
 
-            var url = $"https://csstats.gg/player/{steamID64}";
+            var url = _csstatsURL + steamID64;
             var browser = await Puppeteer.LaunchAsync(new LaunchOptions { Headless = false }); // if headless is set to true csstats.gg will block us
             var page = await browser.NewPageAsync();
             await page.GoToAsync(url);
 
             string returnValue = "---";
 
-            var element = await page.QuerySelectorAsync(".rank > .cs2rating");
+            var element = await page.QuerySelectorAsync(_csstatsRank);
             if (element != null) {
                 var innerText = await element.GetPropertyAsync("innerText");
                 var rank = await innerText.JsonValueAsync();
@@ -116,7 +116,7 @@ namespace Kwikly {
             }
 
             if (returnValue == "---") {
-                var cs2winsElement = await page.QuerySelectorAsync("#cs2-rank > .wins");
+                var cs2winsElement = await page.QuerySelectorAsync(_csstatsWins);
                 if (element != null) {
                     var cs2InnerText = await cs2winsElement.GetPropertyAsync("innerText");
                     var cs2wins = await cs2InnerText.JsonValueAsync();

@@ -78,17 +78,17 @@ namespace Kwikly {
         }
 
         public static void CheckDropDate(DataSet ds) {
-            if (ds != null) {
-                DataRow dropRow = ds.Tables[0].Rows[0];
-                TimeSpan difference = DateTime.Now.Date - DateTime.Parse(dropRow["DropDate"].ToString());
+            if (ds == null) return;
 
-                if (difference.TotalDays >= 7) {
-                    foreach (DataRow row in ds.Tables[1].Rows) {
-                        row["Drop"] = VisualHelper.DropToBitmap((int)VisualHelper.DropStateEnum.NonDrop);
-                    }
+            DataRow dropRow = ds.Tables[0].Rows[0];
+            TimeSpan difference = DateTime.Now.Date - DateTime.Parse(dropRow["DropDate"].ToString());
 
-                    dropRow["DropDate"] = string.Format("{0:dd.MM.yyyy}", GetLastWednesday());
+            if (difference.TotalDays >= 7) {
+                foreach (DataRow row in ds.Tables[1].Rows) {
+                    row["Drop"] = VisualHelper.DropToBitmap((int)VisualHelper.DropStateEnum.NonDrop);
                 }
+
+                dropRow["DropDate"] = string.Format("{0:dd.MM.yyyy}", GetLastWednesday());
             }
         }
 

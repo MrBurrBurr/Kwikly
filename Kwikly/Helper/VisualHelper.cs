@@ -49,8 +49,7 @@ namespace Kwikly {
             frm.Text = text;
             return _pBar;
         }
-        public static bool IsBetween<T>(this T item, T start, T end)
-        {
+        public static bool IsBetween<T>(this T item, T start, T end) {
             return Comparer<T>.Default.Compare(item, start) >= 0 && Comparer<T>.Default.Compare(item, end) <= 0;
         }
 
@@ -67,8 +66,7 @@ namespace Kwikly {
 
             rank = rank.Replace(",", "");
             int rankInt;
-            if (int.TryParse(rank, out rankInt))
-            {
+            if (int.TryParse(rank, out rankInt)) {
                 var cellStyle = currentCell.Style;
 
                 if (IsBetween(rankInt, 0, 4999)) cellStyle.BackColor = common;
@@ -80,10 +78,8 @@ namespace Kwikly {
                 if (IsBetween(rankInt, 30000, 99999)) cellStyle.BackColor = unusual;
             }
         }
-        public static void VisualizeRanks(DataGridView dg)
-        {
-            foreach (DataGridViewRow account in dg.Rows)
-            {
+        public static void VisualizeRanks(DataGridView dg) {
+            foreach (DataGridViewRow account in dg.Rows) {
                 string rank = account.Cells["Rank"].Value.ToString();
                 UpdateRankColor(rank, account.Cells["Rank"]);
             }
