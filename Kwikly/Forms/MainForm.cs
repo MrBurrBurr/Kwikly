@@ -249,7 +249,7 @@ namespace Kwikly {
 
         private void DataGrid_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e) {
             try {
-                DataGridHelper.MouseDoubleClickEventAsync(e, DataGrid);
+                DataGridHelper.MouseDoubleClickEventAsync(e, DataGrid).ConfigureAwait(false);
 
                 if (e.Button == MouseButtons.Left &&
                     e.ColumnIndex == DataGrid.Columns.IndexOf(DataGrid.Columns["Nr"]) ||
@@ -364,6 +364,7 @@ namespace Kwikly {
                     DataSetHelper.CheckDropDate((DataSet)DataGrid.DataSource);
                     VisualizeInactiveAccounts();
                     VisualizeLoggedInAccount();
+                    VisualizeRanks();
                 }
             }
             catch (Exception ex) {
@@ -394,6 +395,7 @@ namespace Kwikly {
                 LoadLayout();
                 VisualizeInactiveAccounts();
                 VisualizeLoggedInAccount();
+                VisualizeRanks();
 
                 MessageBox.Show(string.Format("{0} account(s) added", newAccounts));
             }
@@ -431,6 +433,7 @@ namespace Kwikly {
             LoadDataGrid();
             LoadLayout();
             VisualizeLoggedInAccount();
+            VisualizeRanks();
         }
     }
 }
