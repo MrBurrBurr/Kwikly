@@ -39,7 +39,6 @@ namespace Kwikly {
             accountTable.Columns.Add("Name");
             accountTable.Columns.Add("Rank");
             accountTable.Columns.Add("Level");
-            accountTable.Columns.Add("Prime");
             accountTable.Columns.Add("Drop");
             accountTable.Columns.Add("SteamID32");
             accountTable.Columns.Add("SteamID64");
@@ -54,9 +53,8 @@ namespace Kwikly {
                 accountRow["Nr"] = DataSetHelper.GetDoubleDigitNumber(i);
                 accountRow["Login"] = SteamHelper.GetLoginNameBySteamID64(_steamID64);
                 accountRow["Name"] = SteamHelper.GetNameBySteamID64(_steamID64);
-                accountRow["Rank"] = 0;
+                accountRow["Rank"] = "---";
                 accountRow["Level"] = 1;
-                accountRow["Prime"] = 0;
                 accountRow["Drop"] = 0;
                 accountRow["SteamID32"] = steamID32;
                 accountRow["SteamID64"] = _steamID64;
@@ -91,9 +89,8 @@ namespace Kwikly {
                 accountRow["Nr"] = DataSetHelper.GetDoubleDigitNumber(i);
                 accountRow["Login"] = SteamHelper.GetLoginNameBySteamID64(_steamID64);
                 accountRow["Name"] = SteamHelper.GetNameBySteamID64(_steamID64);
-                accountRow["Rank"] = VisualHelper.RankToBitmap(0);
+                accountRow["Rank"] = "---";
                 accountRow["Level"] = 1;
-                accountRow["Prime"] = VisualHelper.PrimeToBitmap(0);
                 accountRow["Drop"] = VisualHelper.DropToBitmap(0);
                 accountRow["SteamID32"] = steamID32;
                 accountRow["SteamID64"] = _steamID64;

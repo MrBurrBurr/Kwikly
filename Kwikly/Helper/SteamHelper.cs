@@ -1,10 +1,12 @@
 using Microsoft.Win32;
+using PuppeteerSharp;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using System.Net;
 using System.Text;
 using System.Text.RegularExpressions;
+using System.Threading.Tasks;
 
 namespace Kwikly {
     class SteamHelper {
@@ -52,14 +54,6 @@ namespace Kwikly {
             }
         }
 
-        public static int CurrentUserID {
-            get {
-                using (RegistryKey registryKey = Registry.CurrentUser.OpenSubKey(@"Software\\Valve\\Steam\\ActiveProcess")) {
-                    return (int)registryKey.GetValue("ActiveUser");
-                }
-            }
-        }
-
         public static string CurrentUsername {
             get {
                 using (RegistryKey registryKey = Registry.CurrentUser.OpenSubKey(@"Software\\Valve\\Steam")) {
@@ -99,13 +93,30 @@ namespace Kwikly {
             return match.Success ? match.Groups[1].Value : "";
         }
 
-        public static string GetSteamID64ByLoginName(string loginName) {
-            Match match = Regex.Match(File.ReadAllText(_configFile), @"\""" + loginName + @"\""[^\r][^\S\n]+[^\r]{[^\r][^\S\n]+\""SteamID\""[^\S]+\""([0-9]+)\""", RegexOptions.IgnoreCase);
-            return match.Success ? match.Groups[1].Value : "";
-        }
-
         public static long GetSteamID64BySteamID32(int steamID32) {
             return _steamID64base + steamID32;
+        }
+
+        public static async Task<string> GetRankBySteamID64Async(long steamID64) {
+            var browserFetcher = new BrowserFetcher();
+            await browserFetcher.DownloadAsync();
+
+            var url = $"https://csstats.gg/player/{steamID64}";
+            var browser = await Puppeteer.LaunchAsync(new LaunchOptions { Headless = false }); // if headless is set to true csstats.gg will block us
+            var page = await browser.NewPageAsync();
+            await page.GoToAsync(url);
+
+            var element = await page.QuerySelectorAsync(".rank > .cs2rating");
+            if (element == null) {
+                browser.Dispose();
+                return "---";
+            }
+
+            var innerText = await element.GetPropertyAsync("innerText");
+            var rank = await innerText.JsonValueAsync();
+            browser.Dispose();
+
+            return rank.ToString();
         }
 
         public static string GetNameBySteamID64(long steamID64) {

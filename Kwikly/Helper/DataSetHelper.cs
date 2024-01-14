@@ -19,9 +19,8 @@ namespace Kwikly {
             normalizedTable.Columns.Add("Nr", typeof(string));
             normalizedTable.Columns.Add("Login", typeof(string));
             normalizedTable.Columns.Add("Name", typeof(string));
-            normalizedTable.Columns.Add("Rank", typeof(int));
+            normalizedTable.Columns.Add("Rank", typeof(string));
             normalizedTable.Columns.Add("Level", typeof(int));
-            normalizedTable.Columns.Add("Prime", typeof(int));
             normalizedTable.Columns.Add("Drop", typeof(int));
             normalizedTable.Columns.Add("SteamID32", typeof(int));
             normalizedTable.Columns.Add("SteamID64", typeof(long));
@@ -31,9 +30,8 @@ namespace Kwikly {
                 normalizedRow["Nr"] = row["Nr"];
                 normalizedRow["Login"] = row["Login"];
                 normalizedRow["Name"] = row["Name"];
-                normalizedRow["Rank"] = VisualHelper.BitmapToRank((row["Rank"] as Bitmap).GetHashCode());
+                normalizedRow["Rank"] = row["Rank"];
                 normalizedRow["Level"] = row["Level"];
-                normalizedRow["Prime"] = VisualHelper.BitmapToPrime((row["Prime"] as Bitmap).GetHashCode());
                 normalizedRow["Drop"] = VisualHelper.BitmapToDrop((row["Drop"] as Bitmap).GetHashCode());
                 normalizedRow["SteamID32"] = row["SteamID32"];
                 normalizedRow["SteamID64"] = row["SteamID64"];
@@ -57,9 +55,8 @@ namespace Kwikly {
             normalizedTable.Columns.Add("Nr", typeof(string));
             normalizedTable.Columns.Add("Login", typeof(string));
             normalizedTable.Columns.Add("Name", typeof(string));
-            normalizedTable.Columns.Add("Rank", typeof(Bitmap));
+            normalizedTable.Columns.Add("Rank", typeof(string));
             normalizedTable.Columns.Add("Level", typeof(int));
-            normalizedTable.Columns.Add("Prime", typeof(Bitmap));
             normalizedTable.Columns.Add("Drop", typeof(Bitmap));
             normalizedTable.Columns.Add("SteamID32", typeof(int));
             normalizedTable.Columns.Add("SteamID64", typeof(long));
@@ -69,9 +66,8 @@ namespace Kwikly {
                 normalizedRow["Nr"] = row["Nr"];
                 normalizedRow["Login"] = row["Login"];
                 normalizedRow["Name"] = row["Name"];
-                normalizedRow["Rank"] = VisualHelper.RankToBitmap(int.Parse(row["Rank"].ToString()));
+                normalizedRow["Rank"] = row["Rank"];
                 normalizedRow["Level"] = row["Level"];
-                normalizedRow["Prime"] = VisualHelper.PrimeToBitmap(int.Parse(row["Prime"].ToString()));
                 normalizedRow["Drop"] = VisualHelper.DropToBitmap(int.Parse(row["Drop"].ToString()));
                 normalizedRow["SteamID32"] = row["SteamID32"];
                 normalizedRow["SteamID64"] = row["SteamID64"];

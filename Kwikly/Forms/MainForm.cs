@@ -31,6 +31,7 @@ namespace Kwikly {
                 CheckDropDate();
                 VisualizeInactiveAccounts();
                 VisualizeLoggedInAccount();
+                VisualizeRanks();
                 CheckForUpdates();
                 CleanUpAfterUpdate();
             }
@@ -86,6 +87,17 @@ namespace Kwikly {
             }
             catch (Exception ex) {
                 MessageBox.Show("Error visualizing logged in account: " + ex.Message);
+            }
+        }
+
+        private void VisualizeRanks() {
+            try
+            {
+                VisualHelper.VisualizeRanks(DataGrid);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error visualizing ranks: " + ex.Message);
             }
         }
 
@@ -217,21 +229,6 @@ namespace Kwikly {
 
         private void DataGrid_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e) {
             switch (e.Button) {
-                case MouseButtons.Middle:
-                    try {
-                        if (e.ColumnIndex == DataGrid.Columns.IndexOf(DataGrid.Columns["Rank"])) {
-                            DataGrid.Rows[e.RowIndex].Cells["Rank"].Selected = true;
-                            var oldRank = VisualHelper.BitmapToRank((DataGrid.CurrentCell.Value as Bitmap).GetHashCode());
-                            var newRank = VisualHelper.RankToGreyRank(oldRank);
-                            DataGrid.CurrentCell.Value = VisualHelper.RankToBitmap(newRank);
-                            break;
-                        }
-                    }
-                    catch (Exception ex) {
-                        MessageBox.Show("Error changing value while single clicking: " + ex.Message);
-                    }
-                    break;
-
                 case MouseButtons.Right:
                     try {
                         if (e.RowIndex == -1) {
@@ -252,7 +249,7 @@ namespace Kwikly {
 
         private void DataGrid_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e) {
             try {
-                DataGridHelper.MouseDoubleClickEvent(e, DataGrid);
+                DataGridHelper.MouseDoubleClickEventAsync(e, DataGrid);
 
                 if (e.Button == MouseButtons.Left &&
                     e.ColumnIndex == DataGrid.Columns.IndexOf(DataGrid.Columns["Nr"]) ||
@@ -357,7 +354,7 @@ namespace Kwikly {
 
         private void ReloadConfigToolStripMenuItem_Click(object sender, EventArgs e) {
             try {
-                DialogResult reloadConfig = MessageBox.Show("Are you sure you want to reload the config?\nSettings like level, rank, prime and drop will be lost.", "Reload config", MessageBoxButtons.YesNo);
+                DialogResult reloadConfig = MessageBox.Show("Are you sure you want to reload the config?\nSettings like level, rank and drop will be lost.", "Reload config", MessageBoxButtons.YesNo);
                 if (reloadConfig == DialogResult.Yes) {
                     ProgressBar pBar = VisualHelper.CreateNewProgressBar(this, "Reloading config...");
                     Config.Create(pBar);

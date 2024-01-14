@@ -124,80 +124,17 @@
   <data name="Delete" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\images\context\delete.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="DMG" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\images\ranks\DMG.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="Down" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\images\context\down.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Exit" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\images\context\exit.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="GE" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\images\ranks\GE.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="GN1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\images\ranks\GN1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="GN2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\images\ranks\GN2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="GN3" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\images\ranks\GN3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="GN4" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\images\ranks\GN4.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Green" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\images\prime\Green.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="LE" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\images\ranks\LE.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="LEM" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\images\ranks\LEM.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="MG1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\images\ranks\MG1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="MG2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\images\ranks\MG2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="MGE" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\images\ranks\MGE.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Red" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\images\prime\Red.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="Refresh" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\images\context\refresh.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="S1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\images\ranks\S1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="S2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\images\ranks\S2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="S3" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\images\ranks\S3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="S4" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\images\ranks\S4.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="SE" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\images\ranks\SE.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="SEM" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\images\ranks\SEM.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="SMFC" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\images\ranks\SMFC.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="Star" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\images\drop\Star.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Unranked" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\images\ranks\Unranked.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Up" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\images\context\up.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -216,59 +153,5 @@
   </data>
   <data name="Switch" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\images\context\switch.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="DMG_modified" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\images\ranks\dmg-modified.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="GE_modified" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\images\ranks\ge-modified.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="GN1_modified" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\images\ranks\gn1-modified.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="GN2_modified" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\images\ranks\gn2-modified.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="GN3_modified" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\images\ranks\gn3-modified.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="GN4_modified" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\images\ranks\gn4-modified.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="LEM_modified" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\images\ranks\lem-modified.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="LE_modified" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\images\ranks\le-modified.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="MG1_modified" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\images\ranks\mg1-modified.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="MG2_modified" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\images\ranks\mg2-modified.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="MGE_modified" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\images\ranks\mge-modified.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="S1_modified" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\images\ranks\s1-modified.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="S2_modified" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\images\ranks\s2-modified.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="S3_modified" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\images\ranks\s3-modified.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="S4_modified" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\images\ranks\s4-modified.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="SEM_modified" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\images\ranks\sem-modified.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="SE_modified" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\images\ranks\se-modified.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="SMFC_modified" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\images\ranks\smfc-modified.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
