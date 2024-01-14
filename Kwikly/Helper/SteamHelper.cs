@@ -106,17 +106,26 @@ namespace Kwikly {
             var page = await browser.NewPageAsync();
             await page.GoToAsync(url);
 
+            string returnValue = "---";
+
             var element = await page.QuerySelectorAsync(".rank > .cs2rating");
-            if (element == null) {
-                browser.Dispose();
-                return "---";
+            if (element != null) {
+                var innerText = await element.GetPropertyAsync("innerText");
+                var rank = await innerText.JsonValueAsync();
+                returnValue = rank.ToString();
             }
 
-            var innerText = await element.GetPropertyAsync("innerText");
-            var rank = await innerText.JsonValueAsync();
-            browser.Dispose();
+            if (returnValue == "---") {
+                var cs2winsElement = await page.QuerySelectorAsync("#cs2-rank > .wins");
+                if (element != null) {
+                    var cs2InnerText = await cs2winsElement.GetPropertyAsync("innerText");
+                    var cs2wins = await cs2InnerText.JsonValueAsync();
+                    returnValue = $"{10 - int.Parse(cs2wins.ToString())}x more";
+                }
+            }
 
-            return rank.ToString();
+            browser.Dispose();
+            return returnValue;
         }
 
         public static string GetNameBySteamID64(long steamID64) {
