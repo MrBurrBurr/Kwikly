@@ -92,6 +92,7 @@ namespace Kwikly {
         public static void VisualizeLoggedInAccount(DataGridView dg) {
             foreach (DataGridViewRow row in dg.Rows) {
                 foreach (DataGridViewColumn col in dg.Columns) {
+                    if (col.Name == "Rank") continue; // do not reset rank color
                     dg.Rows[row.Index].Cells[col.Index].Style.BackColor = Color.White;
                 }
             }
