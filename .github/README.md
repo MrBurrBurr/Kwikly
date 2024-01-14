@@ -12,6 +12,6 @@
 </h3>
 
 ## Detailed setup instructions
-- Visit [the releases page](https://github.com/MrBurrBurr/Kwikly/releases) and download `Kwikly.zip`.
-- Run `Kwikly.exe` and wait for the config file to be created.
+- Visit [the releases page](https://github.com/MrBurrBurr/Kwikly/releases) and download [Kwikly.zip](https://github.com/MrBurrBurr/Kwikly/releases/download/2.0.0.0/Kwikly.zip).
+- Extract `Kwikly.zip` and run `Kwikly.exe`.
 - Enjoy switching between your steam accounts with only one double-click.
