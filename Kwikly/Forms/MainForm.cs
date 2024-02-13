@@ -218,10 +218,17 @@ namespace Kwikly {
                 context.Items.Add(DeleteToolStripMenuItem);
             }
             else if (dg.CurrentCell.ColumnIndex == dg.Columns.IndexOf(dg.Columns["Name"])) {
-                ToolStripMenuItem RefreshToolStripMenuItem = new ToolStripMenuItem("Refresh", Properties.Resources.Refresh);
-                RefreshToolStripMenuItem.Name = "RefreshToolStripMenuItem";
-                RefreshToolStripMenuItem.Click += new EventHandler(RefreshToolStripMenuItem_Click);
-                context.Items.Add(RefreshToolStripMenuItem);
+                ToolStripMenuItem RefreshNameToolStripMenuItem = new ToolStripMenuItem("Refresh", Properties.Resources.Refresh);
+                RefreshNameToolStripMenuItem.Name = "RefreshNameToolStripMenuItem";
+                RefreshNameToolStripMenuItem.Click += new EventHandler(RefreshNameToolStripMenuItem_Click);
+                context.Items.Add(RefreshNameToolStripMenuItem);
+            }
+            else if (dg.CurrentCell.ColumnIndex == dg.Columns.IndexOf(dg.Columns["Rank"]))
+            {
+                ToolStripMenuItem RefreshRankToolStripMenuItem = new ToolStripMenuItem("Refresh", Properties.Resources.Refresh);
+                RefreshRankToolStripMenuItem.Name = "RefreshRankToolStripMenuItem";
+                RefreshRankToolStripMenuItem.Click += new EventHandler(RefreshRankToolStripMenuItem_Click);
+                context.Items.Add(RefreshRankToolStripMenuItem);
             }
 
             return context;
@@ -249,7 +256,7 @@ namespace Kwikly {
 
         private void DataGrid_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e) {
             try {
-                DataGridHelper.MouseDoubleClickEventAsync(e, DataGrid).ConfigureAwait(false);
+                DataGridHelper.MouseDoubleClickEvent(e, DataGrid);
 
                 if (e.Button == MouseButtons.Left &&
                     e.ColumnIndex == DataGrid.Columns.IndexOf(DataGrid.Columns["Nr"]) ||
@@ -330,12 +337,24 @@ namespace Kwikly {
             }
         }
 
-        private void RefreshToolStripMenuItem_Click(object sender, EventArgs e) {
+        private void RefreshNameToolStripMenuItem_Click(object sender, EventArgs e) {
             try {
-                ContextHelper.RefreshEvent(DataGrid);
+                ContextHelper.RefreshNameEvent(DataGrid);
             }
             catch (Exception ex) {
                 MessageBox.Show("Error while refreshing name: " + ex.Message);
+            }
+        }
+
+        private void RefreshRankToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                ContextHelper.RefreshRankEventAsync(DataGrid);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error while refreshing rank: " + ex.Message);
             }
         }
 
