@@ -2,7 +2,6 @@ using System.Windows.Forms;
 
 namespace Kwikly {
     class ContextHelper {
-
         public static void DeleteEvent(DataGridView dataGrid) {
             int rowToDelete = dataGrid.Rows.GetFirstRow(DataGridViewElementStates.Selected);
             dataGrid.Rows.RemoveAt(rowToDelete);

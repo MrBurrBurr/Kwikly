@@ -20,6 +20,7 @@ namespace Kwikly {
             NonDrop = 0,
             Drop = 1
         }
+
         static VisualHelper() {
             dropToBitmap = new Dictionary<int, Bitmap>() {
                 {0, Black},
@@ -31,12 +32,15 @@ namespace Kwikly {
                 {Star.GetHashCode(), 1}
             };
         }
+
         public static Bitmap DropToBitmap(int dropState) {
             return dropToBitmap[dropState];
         }
+
         public static int BitmapToDrop(int dropBitmap) {
             return bitmapToDrop[dropBitmap];
         }
+
         public static ProgressBar CreateNewProgressBar(MainForm frm, string text) {
             ProgressBar _pBar = new ProgressBar();
             _pBar.Location = new Point(0, 0);
@@ -49,6 +53,7 @@ namespace Kwikly {
             frm.Text = text;
             return _pBar;
         }
+
         public static bool IsBetween<T>(this T item, T start, T end) {
             return Comparer<T>.Default.Compare(item, start) >= 0 && Comparer<T>.Default.Compare(item, end) <= 0;
         }
@@ -78,6 +83,7 @@ namespace Kwikly {
                 if (IsBetween(rankInt, 30000, 99999)) cellStyle.BackColor = unusual;
             }
         }
+
         public static void VisualizeRanks(DataGridView dg) {
             foreach (DataGridViewRow account in dg.Rows) {
                 string rank = account.Cells["Rank"].Value.ToString();

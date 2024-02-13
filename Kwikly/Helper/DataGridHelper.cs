@@ -4,7 +4,6 @@ using System.Windows.Forms;
 
 namespace Kwikly {
     class DataGridHelper {
-
         public static void LoadLayout(DataGridView dg) {
             dg.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dg.Columns["Login"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
