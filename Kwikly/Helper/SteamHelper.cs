@@ -16,7 +16,7 @@ namespace Kwikly {
         private static string _steamURL = "http://steamcommunity.com/profiles/";
         private static string _csstatsURL = "https://csstats.gg/player/";
         private static string _csstatsRank = ".rank > .cs2rating";
-        private static string _csstatsWins = "#cs2-rank > .wins";
+        private static string _csstatsWins = ".ranks > .bottom > .wins > span";
 
         private static void Start() {
             Process.Start(Registry.CurrentUser.OpenSubKey(@"Software\\Valve\\Steam").GetValue("SteamExe").ToString());
