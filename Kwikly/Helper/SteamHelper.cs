@@ -102,7 +102,8 @@ namespace Kwikly {
             await browserFetcher.DownloadAsync();
 
             var url = _csstatsURL + steamID64;
-            var browser = await Puppeteer.LaunchAsync(new LaunchOptions { Headless = false }); // if headless is set to true csstats.gg will block us
+            var browser = await Puppeteer.LaunchAsync(new LaunchOptions { Headless = false, Args = new[] { "--window-size=1,1" } }); // if headless is set to true csstats.gg will block us
+            
             var page = await browser.NewPageAsync();
             await page.GoToAsync(url);
 
