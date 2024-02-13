@@ -61,11 +61,13 @@ namespace Kwikly {
         public static void UpdateRankColor(string rank, DataGridViewCell currentCell) {
             if (rank == "---") {
                 currentCell.Style.BackColor = common;
+                currentCell.Style.ForeColor = Color.Empty;
                 return;
             }
 
             if (rank.StartsWith("Wins:")) {
                 currentCell.Style.BackColor = common;
+                currentCell.Style.ForeColor = Color.Empty;
                 return;
             }
 
@@ -74,13 +76,41 @@ namespace Kwikly {
             if (int.TryParse(rank, out rankInt)) {
                 var cellStyle = currentCell.Style;
 
-                if (IsBetween(rankInt, 0, 4999)) cellStyle.BackColor = common;
-                if (IsBetween(rankInt, 5000, 9999)) cellStyle.BackColor = uncommon;
-                if (IsBetween(rankInt, 10000, 14999)) cellStyle.BackColor = rare;
-                if (IsBetween(rankInt, 15000, 19999)) cellStyle.BackColor = mythical;
-                if (IsBetween(rankInt, 20000, 24999)) cellStyle.BackColor = legendary;
-                if (IsBetween(rankInt, 25000, 29999)) cellStyle.BackColor = ancient;
-                if (IsBetween(rankInt, 30000, 99999)) cellStyle.BackColor = unusual;
+                if (IsBetween(rankInt, 0, 4999))
+                {
+                    cellStyle.BackColor = common;
+                    currentCell.Style.ForeColor = Color.Empty;
+                } 
+                else if (IsBetween(rankInt, 5000, 9999))
+                {
+                    cellStyle.BackColor = uncommon;
+                    currentCell.Style.ForeColor = Color.Empty;
+                }
+                else if (IsBetween(rankInt, 10000, 14999)) 
+                {
+                    cellStyle.BackColor = rare;
+                    currentCell.Style.ForeColor = Color.White;
+                }
+                else if (IsBetween(rankInt, 15000, 19999)) 
+                {
+                    cellStyle.BackColor = mythical;
+                    currentCell.Style.ForeColor = Color.White;
+                }
+                else if (IsBetween(rankInt, 20000, 24999)) 
+                {
+                    cellStyle.BackColor = legendary;
+                    currentCell.Style.ForeColor = Color.Empty;
+                }
+                else if (IsBetween(rankInt, 25000, 29999))
+                {
+                    cellStyle.BackColor = ancient;
+                    currentCell.Style.ForeColor = Color.Empty;
+                }
+                else if (IsBetween(rankInt, 30000, 99999)) 
+                {
+                    cellStyle.BackColor = unusual;
+                    currentCell.Style.ForeColor = Color.Empty;
+                }
             }
         }
 
