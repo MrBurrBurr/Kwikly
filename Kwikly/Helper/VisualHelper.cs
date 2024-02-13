@@ -64,7 +64,7 @@ namespace Kwikly {
                 return;
             }
 
-            if (rank.EndsWith("x wins")) {
+            if (rank.StartsWith("Wins:")) {
                 currentCell.Style.BackColor = common;
                 return;
             }
