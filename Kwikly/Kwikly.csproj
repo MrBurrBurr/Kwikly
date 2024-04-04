@@ -61,6 +61,6 @@
     <PackageReference Include="System.Runtime.CompilerServices.Unsafe" Version="6.0.0" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="PuppeteerSharp" Version="13.0.2" />
+    <PackageReference Include="PuppeteerSharp" Version="16.0.0" />
   </ItemGroup>
 </Project>
