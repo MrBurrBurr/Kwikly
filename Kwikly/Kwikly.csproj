@@ -29,6 +29,7 @@
     <AssemblyVersion>3.0.0.0</AssemblyVersion>
     <FileVersion>3.0.0.0</FileVersion>
     <Description>The fastest way to switch between your steam accounts</Description>
+    <PackageProjectUrl>https://kwikly.frederick.win/</PackageProjectUrl>
   </PropertyGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.5.2">
